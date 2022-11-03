@@ -61,7 +61,6 @@ REFRESH_TOKEN = tokens.get("refreshToken") # Refresh token
 Get all devices and their id's by sending a request to:
 
 ```Python
-
 url = "https://iot.mittnat.nu/api/user/devices" + "?page=0&pageSize=100"
 
 headers = {
@@ -73,8 +72,9 @@ response = requests.post(url, headers=headers)
 
 devices = json.loads(response.text)
 ```
+
 ### Response data (parsed):
-```JSON
+```Python
 devices: {
     "data": [
         {
@@ -134,7 +134,7 @@ devices = json.loads(response.text)
 
 ```
 ### Response data (parsed):
-```JSON
+```Python
 data: {
     "Temperature": [{ "value": "value", "ts": 1609459200000}],
     "Humidity": [{ "value": "false", "ts": 1609459200000}]
