@@ -11,6 +11,7 @@ Python3 is used.
 #
 
 ## Python libraries used in the examples below
+
 ```Python
 import json
 import requests
@@ -23,6 +24,7 @@ import requests
 The **_payload_** variable must be JSON encoded.
 
 Login and get authorization tokens by sending a request to:
+
 ```Python
 user_email = "example@exampleemail.xxx"
 user_password = "ThisPasswordIsSoS3CuR3!"
@@ -43,7 +45,9 @@ response = requests.post(url, headers=headers, data=json.dumps(payload))
 
 tokens = json.loads(response.text)
 ```
+
 ### Response data (parsed):
+
 ```Python
 tokens: {
     token: "ACCESS_TOKEN",
@@ -74,6 +78,7 @@ devices = json.loads(response.text)
 ```
 
 ### Response data (parsed):
+
 ```Python
 devices: {
     "data": [
@@ -121,7 +126,9 @@ Get the latest timeseries data values for Temperature and Humidity by sending re
 entity_id = "784f394c-42b6-435a-983c-b7beff2784f9" # EXAMPLE ID
 entity_type = "DEVICE" # Entity type
 
-url = "https://iot.mittnat.nu/api/plugins/telemetry/" + str(entity_type) + "/" + str(entity_id) + "/values/timeseries" + "?keys=Temperature,Humidity"
+url = "https://iot.mittnat.nu/api/plugins/telemetry/" +
+    str(entity_type) + "/" + str(entity_id) + "/values/timeseries" +
+    "?keys=Temperature,Humidity"
 
 headers = {
     "Accept": "application/json",
@@ -133,7 +140,9 @@ response = requests.post(url, headers=headers)
 devices = json.loads(response.text)
 
 ```
+
 ### Response data (parsed):
+
 ```Python
 data: {
     "Temperature": [{ "value": "value", "ts": 1609459200000}],
